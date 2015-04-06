@@ -1,0 +1,18 @@
+.preview-panel {
+  @include panel;
+  background-color: #95a5a6;
+  @media #{$medium-up} {
+    min-height: 80vh;
+    max-height: 80vh;
+    overflow: hidden;
+  }
+  img {
+    margin: rem-calc(10) 0;
+  }
+}
+
+.bcg-img {
+  height: 100%;
+  width: 100%;
+  background-color: red;
+}

@@ -1,0 +1,29 @@
+.menu-panel {
+  @include panel;
+  background-color: #3498db;
+  position: relative;
+  @media #{$medium-up} {
+    min-height: 10vh;
+    max-height: 10vh;
+  }
+  .row {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 1vh;
+  }
+}
+
+.menu-bar {
+  @include inline-list;
+  margin: 0;
+  text-align: center;
+  li {
+    float: none;
+    display: inline-block;
+  }
+  // @media #{$medium-up} {
+  //   margin-top: 10%;
+  // }
+}
