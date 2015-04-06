@@ -25,10 +25,10 @@ And you're set!
 
 ## Directory Structure
 
-  * `scss/_gpm-settings.scss`: GPM configuration settings go in here
+  * `scss/_settings.scss`: GPM configuration settings go in here
   * `scss/_foundation-settings.scss`: Foundation configuration settings go in here (using the settings from the above mentioned file)
   * `scss/app.scss`: Application structure goes here. pull in or knock out after taste.
-  * `scss/_gpm-theme.scss`: all remaining theming
+  * `scss/_theme.scss`: all remaining theming
   
 ## Credits
 
