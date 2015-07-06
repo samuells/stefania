@@ -1,46 +1,114 @@
 <!doctype html>
 <html class="no-js" lang="en">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>StefikaSK</title>
-    <link rel="stylesheet" href="css/styles.css"/>
-    <script src="js/vendors/modernizr.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StefikaSK</title>
+  <link rel="stylesheet" type="text/css" href="css/vendors/jquery.mmenu.all.css">
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/vendors/modernizr.js"></script>
 </head>
+
 <body>
-<div class="menu-panel">
-    <div class="row">
-        <div class="column">
-            <ul class="menu-bar">
-                <li><a href="#"></a>S.Sekanova</li>
-                <li><a href="#"></a>About</li>
-                <li><a href="#"></a>CV</li>
-                <li><a href="#"></a>Works</li>
-                <li>/</li>
-                <li><a href="#"></a>EN</li>
-                <li><a href="#"></a>DE</li>
-                <li><a href="#"></a>SK</li>
-            </ul>
+  <main>
+    <header class="main-navigation row">
+      <div class="column">
+        <ul>
+          <li><a href="#">Stefania Sekanova</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Works</a></li>
+          <li><a href="#">English</a></li>
+          <li><a href="#">Deutsch</a></li>
+        </ul>
+      </div>
+    </header>
+    <div class="profile row">
+      <div class="picture">
+      </div>
+      <div class="info">
+        <h1>Moje Cele Meno</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam possimus voluptas deserunt delectus excepturi sapiente explicabo necessitatibus ex.</p>
+        <div class="tech-skills row">
+          <div class="column">
+            <h2>Moj skil</h2>
+          </div>
+          <div class="skills-column">
+            <p>Adobe:*****</p>
+            <p>Adobe:*****</p>
+            <p>Adobe:*****</p>
+          </div>
+          <div class="skills-column">
+            <p>Adobe:*****</p>
+            <p>Adobe:*****</p>
+            <p>Adobe:*****</p>
+          </div>
         </div>
+        <div class="lang-skills row">
+          <h2>Dorozumiet sa?</h2>
+          <p>S tymito ludmi sa dorozumiem</p>
+          <ul>
+            <li>Anglman</li>
+            <li>Neandrtalec</li>
+            <li>Southman</li>
+          </ul>
+          <h3>Tychto ignorujem!</h3>
+          <ul>
+            <li>Anglman</li>
+            <li>Neandrtalec</li>
+            <li>Southman</li>
+          </ul>
+        </div>
+      </div>
     </div>
-</div>
-<div class="preview-panel">
-    <div class="row">
-        <div class="medium-4 columns">
-            <img src="http://placehold.it/600x700" alt="">
-            <img src="http://placehold.it/600x700" alt="">
-            <img src="http://placehold.it/600x700" alt="">
-        </div>
-        <div class="medium-8 columns">
-            <div class="bcg-img">
-                
-            </div>
-            <!-- <img src="http://placehold.it/636x764" alt=""> -->
-        </div>
-    </div>
-</div>
-<!-- <script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="bower_components/foundation/js/foundation.min.js"></script> -->
-<script src="js/app.js"></script>
+    <footer>
+    </footer>
+  </main>
+  <!-- Scripts -->
+  <script type="text/javascript" src="js/vendors/jquery.min.js"></script>
+  <script type="text/javascript" src="js/vendors/jquery.mmenu.min.all.js"></script>
+  <!-- <script src="bower_components/foundation/js/foundation.min.js"></script> -->
+  <script src="js/app.js"></script>
+  <!-- Fire the plugin onDocumentReady -->
+  <script type="text/javascript">
+  $(document).ready(function() {
+    $("#menu").mmenu({
+      "slidingSubmenus": false,
+      "offCanvas": {
+        "position": "bottom",
+        "zposition": "front"
+      },
+      "extensions": [
+        "theme-dark"
+      ],
+      "footer": {
+        "add": true,
+        "title": "Made with love..."
+      },
+      "header": {
+        "title": "MENU",
+        "add": true,
+        "update": true
+      }
+    });
+  });
+  </script>
+  <script type="text/javascript">
+  WebFontConfig = {
+    google: {
+      families: ['Raleway:400,300:latin']
+    }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+  </script>
 </body>
+
 </html>

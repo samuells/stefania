@@ -2,11 +2,13 @@
 
 // Make sure the charset is set appropriately
 
-// Foundation Settings
+// Foundation Settings && Fucntions
+@import "foundation/functions";
 @import "foundation/settings";
 
 // Foundation Components
 @import "foundation/normalize";
+@import "foundation/components/global";
 @import "foundation/components/grid";
 
 // @import "foundation/components/accordion";
@@ -46,8 +48,11 @@
 // @import "foundation/components/top-bar";
 // @import "foundation/components/type";
 // @import "foundation/components/offcanvas";
-// @import "foundation/components/visibility";
+@import "foundation/components/visibility";
 
 // Custom Components
-@import "custom/menu";
+@import "custom/typografy";
+@import "custom/layout";
+@import "custom/header";
 @import "custom/preview-panel";
+@import "custom/profile";

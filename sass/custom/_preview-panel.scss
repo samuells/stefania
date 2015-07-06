@@ -11,6 +11,20 @@
   }
 }
 
+.slide {
+  @include grid-row;
+}
+
+.scol, .mcol {
+  @include grid-column($columns: 12);
+}
+
+.tempimg {
+  background-image: url("https://placehold.it/1200&text=img");
+  height: 80vh;
+  margin: 10px;
+}
+
 .bcg-img {
   height: 100%;
   width: 100%;

@@ -2,7 +2,7 @@
 // foundation.zurb.com
 // Licensed under MIT Open Source
 
-@import "global";
+// @import "global";
 
 //
 // @variables
@@ -38,20 +38,21 @@ $inline-list-children-display: block !default;
   padding: $inline-list-padding;
   list-style: none;
   overflow: $inline-list-overflow;
-
   & > li {
     list-style: none;
     float: $default-float;
     margin-#{$default-float}: $inline-list-default-float-list-margin;
     display: $inline-list-display;
-    &>* { display: $inline-list-children-display; }
-  }
-}
-
-@include exports("inline-list") {
-  @if $include-html-inline-list-classes {
-    .inline-list {
-      @include inline-list();
+    & > * {
+      display: $inline-list-children-display;
     }
   }
 }
+
+// @include exports("inline-list") {
+//   @if $include-html-inline-list-classes {
+//     .inline-list {
+//       @include inline-list();
+//     }
+//   }
+// }
