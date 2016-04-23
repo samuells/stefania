@@ -257,8 +257,9 @@ $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 // $code-padding: rem-calc(2) rem-calc(5) rem-calc(1);
 
 // We use these to style anchors
-// $anchor-text-decoration: none;
-// $anchor-text-decoration-hover: none;
+$anchor-text-decoration: none;
+$anchor-text-decoration-hover: none;
+
 // $anchor-font-color: $primary-color;
 // $anchor-font-color-hover: scale-color($anchor-font-color, $lightness: -14%);
 

@@ -1,0 +1,350 @@
+@keyframes animate-hamburger-open-before {
+  0% {
+    top: 25%;
+    width: 50%;
+  }
+
+  33% {
+    top: 50%;
+    width: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  66%, 100% {
+    top: 50%;
+    width: 70%;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  }
+}
+
+@keyframes animate-hamburger-close-before {
+  0% {
+    top: 25%;
+    width: 50%;
+  }
+
+  33% {
+    top: 50%;
+    width: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  66%, 100% {
+    top: 50%;
+    width: 70%;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  }
+}
+
+@keyframes animate-hamburger-open-after {
+  0% {
+    top: 75%;
+    width: 50%;
+  }
+
+  33% {
+    top: 50%;
+    width: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  66% {
+    top: 50%;
+    width: 70%;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  }
+
+  100% {
+    top: 50%;
+    width: 70%;
+    transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+  }
+}
+
+@keyframes animate-hamburger-close-after {
+  0% {
+    top: 75%;
+    width: 50%;
+  }
+
+  33% {
+    top: 50%;
+    width: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  66% {
+    top: 50%;
+    width: 70%;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  }
+
+  100% {
+    top: 50%;
+    width: 70%;
+    transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+  }
+}
+
+// mobile navigation topbar
+.mobile-topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $topbar-bgc;
+  z-index: 20;
+
+  .logo {
+    display: inline-block;
+    padding: rem-calc(10);
+    color: $menu-link-fc--active;
+    font-size: rem-calc(20);
+    font-weight: 700;
+    line-height: 1.2;
+
+    &::after {
+      content: "/";
+      padding: 0 rem-calc(10);
+      font-size: rem-calc(16);
+      color: currenColor;
+    }
+  }
+
+  .hamburger {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: rem-calc(80);
+    height: rem-calc(68);
+    padding: rem-calc(10);
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 25%;
+      left: 50%;
+      display: block;
+      width: 50%;
+      border: 1px solid $black;
+      transform: translateY(-50%) translateX(-50%);
+      animation-name: animate-hamburger-close-before;
+      animation-duration: 900ms;
+      animation-direction: reverse;
+      animation-fill-mode: backwards;
+    }
+
+    &::after {
+      top: 75%;
+      animation-name: animate-hamburger-close-after;
+    }
+
+    &.no-animation {
+      &::before,
+      &::after {
+        animation-name: none;
+      }
+    }
+
+    span {
+      position: relative;
+      top: 50%;
+      display: block;
+      font-size: rem-calc(20);
+      line-height: 1;
+      color: $menu-link-fc--active;
+      text-align: center;
+      transform: translateY(-50%);
+
+      @include stefi-transition(font-size);
+
+      transition-delay: 600ms;
+    }
+
+    .menu-opened &:not(.no-animation) {
+      &::before,
+      &::after {
+        animation-name: animate-hamburger-open-before;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+      }
+
+      &::after {
+        animation-name: animate-hamburger-open-after;
+      }
+
+      span {
+        font-size: 0;
+        transition-delay: 0s;
+      }
+    }
+  }
+
+  @media #{$medium-up} {
+    display: none;
+  }
+}
+
+header {
+  @media #{$medium-up} {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: rem-calc(70);
+    padding-bottom: rem-calc(10);
+    background-color: $topbar-bgc;
+  }
+}
+
+// navigation wrapper
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: $overlay-bgc;
+  opacity: 0;
+  z-index: -1;
+
+  @include stefi-transition(opacity, z-index);
+
+  transition-timing-function: ease-out, step-end;
+
+  .menu-opened & {
+    opacity: 1;
+    z-index: 10;
+    transition-timing-function: ease-out, step-start;
+  }
+
+  .menu-row {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .main-col,
+  .lang-col {
+    @include grid-column($columns: 12, $collapse: true);
+  }
+
+  .main-menu,
+  .lang-menu {
+    @include reset-ul;
+
+    li {
+      padding: rem-calc(5) rem-calc(10);
+    }
+
+    a {
+      display: block;
+      width: 100%;
+      padding: rem-calc(20) rem-calc(10);
+      color: $menu-link-fc--active;
+      font-size: rem-calc(22);
+      line-height: 1.2;
+      text-align: center;
+      background-color: $menu-link-bgc;
+    }
+  }
+
+  .main-menu {
+    li:first-child {
+      display: none;
+    }
+
+    li:last-child {
+      padding-bottom: rem-calc(15);
+    }
+  }
+
+  .lang-menu {
+    a {
+      padding: rem-calc(12) rem-calc(10);
+      font-size: rem-calc(18);
+    }
+  }
+
+  @media #{$medium-up} {
+    position: static;
+    height: auto;
+    width: auto;
+    background-color: transparent;
+    opacity: 1;
+    z-index: auto;
+
+    .menu-row {
+      position: static;
+      top: 0;
+      transform: none;
+    }
+
+    .main-col {
+      @include grid-column(8, $collapse: true);
+
+      padding-left: rem-calc(10);
+    }
+
+    .lang-col {
+      @include grid-column(4, $collapse: true);
+
+      padding-right: rem-calc(10);
+    }
+
+    .main-menu,
+    .lang-menu {
+      @include reset-ul(true);
+
+      > li {
+        padding: 0 !important;
+      }
+
+      > li:not(:last-child)::after {
+        content: "/";
+        padding: 0 rem-calc(10);
+        font-size: rem-calc(16);
+        color: $menu-link-fc;
+      }
+
+      a {
+        display: inline;
+        padding: 0;
+        color: $menu-link-fc;
+        font-size: rem-calc(20);
+        line-height: 1.2;
+
+        @include stefi-transition(color);
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: $menu-link-fc--hover;
+        }
+
+        &.active {
+          font-weight: 700;
+          color: $menu-link-fc--active;
+        }
+      }
+    }
+
+    .main-menu {
+      > li:first-child {
+        display: inline-block;
+      }
+
+      text-align: left;
+    }
+
+    .lang-menu {
+      text-align: right;
+    }
+  }
+}
+
+// style of the navigation
+.main-navigation {
+  background-color: beige;
+}

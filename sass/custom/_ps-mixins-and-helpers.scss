@@ -1,0 +1,30 @@
+@mixin reset-ul($inline: false) {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  @if $inline {
+    > li {
+      display: inline-block;
+    }
+  }
+}
+
+$stefi-transition-duration: 300ms !default;
+
+@mixin stefi-transition($property...) {
+  transition-property: $property;
+  transition-duration: $stefi-transition-duration;
+  transition-timing-function: ease-out;
+}
+
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  word-wrap: normal;
+}

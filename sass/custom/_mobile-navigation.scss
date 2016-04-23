@@ -1,0 +1,21 @@
+.mobile-navigation {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: beige;
+  width: 100%;
+  transform: translateY(calc(100% - 40px));
+  .menu-link {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: rem-calc(16);
+    line-height: rem-calc(40);
+    text-transform: uppercase;
+  }
+  &.opened, &:hover {
+    transform: translateY(0);
+    height: 70vh;
+    @include single-transition;
+  }
+}

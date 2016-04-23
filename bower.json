@@ -1,0 +1,21 @@
+{
+  "name": "stefania",
+  "version": "0.0.1",
+  "homepage": "https://github.com/samuells/stefania",
+  "authors": [
+    "Samuel Snopko <samuell.snopko@gmail.com>"
+  ],
+  "description": "simple portfolio web site",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.5.1"
+  }
+}

@@ -46,13 +46,20 @@
 // @import "foundation/components/thumbs";
 // @import "foundation/components/tooltips";
 // @import "foundation/components/top-bar";
-// @import "foundation/components/type";
+@import "foundation/components/type";
+
 // @import "foundation/components/offcanvas";
 @import "foundation/components/visibility";
 
 // Custom Components
+@import "custom/ps-colors";
+@import "custom/ps-mixins-and-helpers";
 @import "custom/typografy";
 @import "custom/layout";
-@import "custom/header";
+@import "custom/navigation";
+@import "custom/mobile-navigation";
 @import "custom/preview-panel";
+@import "custom/project-detail";
 @import "custom/profile";
+@import "custom/tile-view";
+@import "custom/footer";
